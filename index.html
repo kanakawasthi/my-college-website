@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MindSpace — a student-made space for reflection, gentle routines and mindful pauses.">
+  <title>MindSpace — Your softer corner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline"><span class="live-dot"></span> A LITTLE SPACE TO CHECK IN WITH YOURSELF <span class="top-date" id="todayLabel"></span></div>
+  <header class="header">
+    <a class="brand" href="#home"><span class="brand-icon">m</span><span>mindspace<span class="brand-period">.</span></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#checkin">Mood garden</a><a href="#journal">Journal</a><a href="#reset">Reset room</a><a href="#littlewins">Little wins</a>
+    </nav>
+    <a class="header-cta" href="#checkin">Start here <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow"><i></i> YOUR DAY, YOUR PACE</span>
+        <h1>Make room<br>for <em>yourself.</em></h1>
+        <p class="hero-lead">A softer corner of the internet to notice how you're feeling, untangle a few thoughts and celebrate the little things.</p>
+        <div class="hero-actions"><a class="btn primary" href="#checkin">Check in with me <span>↗</span></a><a class="under-link" href="#about">What is MindSpace? →</a></div>
+        <div class="hero-micro"><span class="micro-flower">✿</span><span>There is no perfect way to have a day.</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="art-halo"></div>
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1100&q=85" alt="Golden morning light over a peaceful green landscape"></div>
+        <div class="floating-note"><span>☀</span><div><b>A gentle reminder</b><small>You can begin again, anytime.</small></div></div>
+        <span class="sparkle s1">✦</span><span class="sparkle s2">✳</span>
+      </div>
+    </section>
+
+    <section class="daily-line"><span class="quote-mark">“</span><p id="dailyThought">You are allowed to take things one moment at a time.</p><button id="newThought" aria-label="Show another thought">↻</button></section>
+
+    <section class="section wrap" id="checkin">
+      <div class="section-head"><div><span class="eyebrow"><i></i> YOUR MOOD GARDEN</span><h2>What’s the weather<br>like <em>inside?</em></h2></div><p>Pick the mood closest to yours. Every feeling gets a place in the garden — no judgement, no score.</p></div>
+      <div class="garden-panel">
+        <div class="mood-picker">
+          <button class="mood" data-mood="Sunny" data-emoji="☀️"><span>☀️</span><b>Sunny</b><small>Feeling good</small></button>
+          <button class="mood" data-mood="Breezy" data-emoji="🍃"><span>🍃</span><b>Breezy</b><small>Calm / steady</small></button>
+          <button class="mood" data-mood="Cloudy" data-emoji="☁️"><span>☁️</span><b>Cloudy</b><small>A bit unsure</small></button>
+          <button class="mood" data-mood="Rainy" data-emoji="🌧️"><span>🌧️</span><b>Rainy</b><small>Low / tired</small></button>
+          <button class="mood" data-mood="Stormy" data-emoji="⛈️"><span>⛈️</span><b>Stormy</b><small>Feeling a lot</small></button>
+        </div>
+        <div class="garden-bottom"><p id="moodMessage" aria-live="polite">Choose today's weather to plant your first little flower.</p><div class="garden-visual"><span class="garden-label">YOUR GARDEN</span><div class="garden-flowers" id="gardenFlowers"><span class="empty-garden">✿</span></div><small id="gardenCount">Your check-ins will grow here.</small></div></div>
+      </div>
+      <p class="tiny-note">Your mood garden is a reflection tool, not a diagnosis or a measure of your wellbeing.</p>
+    </section>
+
+    <section class="section journal-section wrap" id="journal">
+      <div class="section-head"><div><span class="eyebrow"><i></i> THE THOUGHT VAULT</span><h2>Get it out of<br>your <em>head.</em></h2></div><p>A private-feeling page for everyday reflection. Pick a prompt or write whatever comes to mind.</p></div>
+      <div class="vault-grid">
+        <div class="prompt-side"><span class="pill">A PROMPT FOR TODAY</span><div class="prompt-mark">“</div><h3 id="promptText">What is one thing you wish you gave yourself more credit for?</h3><button class="prompt-next" id="nextPrompt">Give me another prompt ↗</button><div class="prompt-decoration">✳</div></div>
+        <form class="journal-box" id="journalForm"><div class="journal-top"><label for="journalText">YOUR SPACE</label><span id="wordCount">0 words</span></div><textarea id="journalText" placeholder="No perfect sentences needed. Just start..." rows="8"></textarea><div class="journal-bottom"><span id="journalStatus">Saved only in this browser.</span><div><button type="button" class="clear-btn" id="clearJournal">Clear</button><button class="btn primary" type="submit">Save reflection <span>↗</span></button></div></div></form>
+      </div>
+      <p class="tiny-note">This demo stores text in this browser on this device. It is not an encrypted diary or cloud account. Avoid sensitive details and don't use it on a shared device.</p>
+    </section>
+
+    <section class="reset-section" id="reset">
+      <div class="reset-wrap wrap">
+        <div class="reset-copy"><span class="eyebrow light"><i></i> THE RESET ROOM</span><h2>Pause the noise.<br><em>Find your pace.</em></h2><p>Try a short focus pause or a gentle breathing rhythm. You can stop at any time, and you never need to force your breath.</p><div class="reset-controls"><button class="btn cream-btn" id="breathStart">Start breathing <span>→</span></button><button class="timer-link" id="focusStart">Start a 2-minute pause</button></div><span class="reset-status" id="resetStatus" aria-live="polite">Choose a reset that feels comfortable.</span></div>
+        <div class="reset-orb-wrap"><div class="reset-orb" id="resetOrb"><span id="orbText">breathe<br>easy</span></div><span class="orb-caption" id="orbCaption">A small pause is still a pause.</span></div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="littlewins">
+      <div class="section-head"><div><span class="eyebrow"><i></i> THE LITTLE-WIN WALL</span><h2>Small things.<br><em>Still worth celebrating.</em></h2></div><p>Some days, the win is simply showing up. Add a small moment you want to remember.</p></div>
+      <div class="wins-layout">
+        <form class="win-form" id="winForm"><label for="winInput">A little win from today</label><input id="winInput" maxlength="100" placeholder="e.g. I finally started that assignment..." required><button class="btn primary" type="submit">Add to my wall <span>＋</span></button><small>Keep it kind. Every win counts.</small></form>
+        <div class="win-wall" id="winWall"><div class="wall-empty"><span>✿</span><b>Your wall is waiting.</b><small>Add your first little win.</small></div></div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about"><div class="about-inner wrap"><span class="eyebrow light"><i></i> A NOTE ABOUT MINDSPACE</span><h2>Not a perfect-life app.<br><em>A more mindful moment.</em></h2><p>MindSpace is a student-made wellbeing and self-reflection website concept. It offers simple activities for mood check-ins, journaling, mindful pauses and noticing everyday positives. It is not a medical service, does not diagnose conditions and cannot replace support from a qualified professional or a trusted person.</p><a href="#home">Back to the top ↑</a></div><div class="about-mark">m.</div></section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-icon">m</span><span>mindspace<span class="brand-period">.</span></span></a><p>Made with a little care, for everyday humans.</p><span>© <b id="year"></b> Student project</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
